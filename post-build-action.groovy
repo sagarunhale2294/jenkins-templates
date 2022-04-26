@@ -13,6 +13,7 @@ import org.apache.http.impl.client.HttpClients
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.protocol.HttpContext;
 
+// add log msgs to Jenkins console
 manager.listener.logger.println "Post Build pipeline started\n"
 new CodeCleanUp(manager).runCleanUp()
 
@@ -25,6 +26,8 @@ class CodeCleanUp {
 
     def runCleanUp() {
        println "Inside runCleanUp() method..."
+       
+       // add log msgs to Jenkins console
        manager.listener.logger.println "Manager inside runCleanUp() method"
        manager.listener.logger.println CodeCleanUp.httpGetMethod("http://example.com:81")  //https://reqres.in/api/products/3
        
